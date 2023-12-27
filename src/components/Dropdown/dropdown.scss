@@ -1,0 +1,25 @@
+.dropdown {
+  margin: 30px auto;
+  width: 70%;
+  padding: 5px;
+
+  &--head {
+    background-color: #ff6060;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+  }
+  &--description {
+    background-color: #f6f6f6;
+    color: #ff6060;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+  }
+  &--arrow{
+    cursor: pointer;
+  }
+}
