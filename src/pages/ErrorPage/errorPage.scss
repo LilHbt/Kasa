@@ -8,14 +8,22 @@
     font-size: 288px;
     font-weight: 600;
     margin: 0;
+    @media (max-width: 480px) {
+      font-size: 96px;
+    }
   }
   &--text {
     font-size: 36px;
+    @media (max-width: 480px) {
+      font-size: 18px;
+      text-align: center;
+    }
   }
   &--link {
     color: #ff6060;
     font-size: 18px;
     margin: 50px;
     text-decoration: none;
+    text-align: center;
   }
 }

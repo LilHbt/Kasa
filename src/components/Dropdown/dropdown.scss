@@ -2,6 +2,10 @@
   margin: 30px auto;
   width: 70%;
   padding: 5px;
+  @media (max-width: 480px) {
+    margin: 10px auto;
+    width: 335px;
+  }
 
   &--head {
     background-color: #ff6060;
@@ -18,8 +22,9 @@
     margin: 0;
     padding: 10px;
     border-radius: 0 0 10px 10px;
+    list-style-type: none;
   }
-  &--arrow{
+  &--arrow {
     cursor: pointer;
   }
 }

@@ -7,7 +7,7 @@ const APropos = () => {
     <div>
       <BannerAPropos />
       {aProposData.map((data) => (
-        <Dropdown key={data.id} data={data} type="string" />
+        <Dropdown key={data.id} data={data} type="string" title={data.title} />
       ))}
     </div>
   );

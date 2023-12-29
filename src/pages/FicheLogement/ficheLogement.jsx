@@ -13,15 +13,13 @@ const FicheLogement = () => {
     setActiveLogement(data[index]);
     setLoading(false);
   }, [id]);
-  //loading&& <div>description</div> pour les scroller
+
   return (
-  <div>
-    
-    <Carousel  data={activeLogement} />
-    {loading ? <div>Loading...</div> : <BodyFiche data={activeLogement } />}
-    
+    <div>
+      <Carousel data={activeLogement} />
+      {loading ? <div>Loading...</div> : <BodyFiche data={activeLogement} />}
     </div>
-  )
-  
+  );
 };
+
 export default FicheLogement;

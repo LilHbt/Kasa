@@ -1,31 +1,77 @@
 .banner {
-  width: 1240px;
+  width: 90%;
   height: 220px;
   margin: 25px auto;
+  @media (max-width: 480px) {
+    width: 90%;
+    height: 110px;
+  }
+
   &--img {
     position: relative;
     object-fit: cover;
-    width: 1240px;
+    width: 100%;
     height: 220px;
     border-radius: 25px;
     z-index: 1;
+    @media (max-width: 480px) {
+      height: 110px;
+    }
   }
   &--opacity {
     border-radius: 25px;
-    width: 1240px;
+    width: 100%;
     height: 220px;
     position: relative;
-    bottom: 283px;
+    bottom: 340px;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 2;
+
+    @media (max-width: 1024px) {
+      bottom: 253px;
+    }
+    @media (max-width: 768px) {
+      bottom: 282px;
+    }
+    @media (max-width: 480px) {
+      bottom: 174px;
+      height: 110px;
+    }
+    @media (min-width: 320px) and (max-width: 479px) {
+      bottom: 158px;
+    }
   }
   &--text {
+    width: 50%;
     color: white;
     margin: auto;
     font-size: 48px;
     position: relative;
     bottom: 65%;
-    left: 25%;
     z-index: 3;
+
+    @media (max-width: 1024px) {
+      font-size: 24px;
+    }
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.banner-aPropos {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 220px;
+  margin: 25px auto;
+
+  &--img {
+    position: relative;
+    object-fit: cover;
+    width: 90%;
+    height: 220px;
+    border-radius: 25px;
+    z-index: 1;
   }
 }
