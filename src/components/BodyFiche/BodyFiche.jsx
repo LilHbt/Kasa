@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "../Dropdown/dropdown";
 import "./BodyFiche.scss";
 
 function BodyFiche(props) {
   const { data } = props;
-  const ratings = [1, 2, 3, 4, 5];
-  const rate = ratings.filter((ratings) => ratings <= data.rating);
+  const [activeRate , setActiveRate ]= useState([])
+  useEffect(()=>{
+    let rateArray= []
+    for(let i=0; i<5; i++){
+      if(parseInt(data.rating)>i){
+        rateArray.push(true)
+      }else{
+        rateArray.push(false)
+      }
+    }
+    setActiveRate(rateArray)
+  },[data])
+  
 
   return (
     <div>
@@ -16,8 +27,8 @@ function BodyFiche(props) {
             <div className="appartment--location">{data.location}</div>
           </div>
           <div className="tags">
-            {data.tags.map((tags) => (
-              <div key={tags} className="tag">
+            {data.tags.map((tags, i) => (
+              <div key={i} className="tag">
                 {tags}
               </div>
             ))}
@@ -34,9 +45,11 @@ function BodyFiche(props) {
           </div>
           <div className="rating">
             <div>
-              {rate.map((rate) => (
-                <i className="fa-solid fa-star rate"></i>
-              ))}
+              {activeRate.map((rate,i) =>
+              rate?
+                <i key={i} className="fa-solid fa-star active-rate"></i>
+              : <i key={i} className="fa-solid fa-star rate"></i>
+              )}
             </div>
           </div>
         </div>

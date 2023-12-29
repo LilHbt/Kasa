@@ -24,5 +24,12 @@
     z-index: -1;
     object-fit: cover;
     object-position: center;
+    border-radius: 25px;
+  }
+  &--counter{
+    position: relative;
+    top: 185px;
+    color: white;
+    font-size: 18px;
   }
 }

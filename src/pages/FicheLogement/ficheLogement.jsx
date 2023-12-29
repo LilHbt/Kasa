@@ -15,9 +15,10 @@ const FicheLogement = () => {
   }, [id]);
 
   return (
+    loading ? <div>Loading...</div> :
     <div>
       <Carousel data={activeLogement} />
-      {loading ? <div>Loading...</div> : <BodyFiche data={activeLogement} />}
+      <BodyFiche data={activeLogement} />
     </div>
   );
 };
