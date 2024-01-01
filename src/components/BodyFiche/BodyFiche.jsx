@@ -4,19 +4,18 @@ import "./BodyFiche.scss";
 
 function BodyFiche(props) {
   const { data } = props;
-  const [activeRate , setActiveRate ]= useState([])
-  useEffect(()=>{
-    let rateArray= []
-    for(let i=0; i<5; i++){
-      if(parseInt(data.rating)>i){
-        rateArray.push(true)
-      }else{
-        rateArray.push(false)
+  const [activeRate, setActiveRate] = useState([]);
+  useEffect(() => {
+    let rateArray = [];
+    for (let i = 0; i < 5; i++) {
+      if (parseInt(data.rating) > i) {
+        rateArray.push(true);
+      } else {
+        rateArray.push(false);
       }
     }
-    setActiveRate(rateArray)
-  },[data])
-  
+    setActiveRate(rateArray);
+  }, [data]);
 
   return (
     <div>
@@ -45,10 +44,12 @@ function BodyFiche(props) {
           </div>
           <div className="rating">
             <div>
-              {activeRate.map((rate,i) =>
-              rate?
-                <i key={i} className="fa-solid fa-star active-rate"></i>
-              : <i key={i} className="fa-solid fa-star rate"></i>
+              {activeRate.map((rate, i) =>
+                rate ? (
+                  <i key={i} className="fa-solid fa-star active-rate"></i>
+                ) : (
+                  <i key={i} className="fa-solid fa-star rate"></i>
+                ),
               )}
             </div>
           </div>

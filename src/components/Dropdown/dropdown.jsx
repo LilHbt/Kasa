@@ -36,8 +36,10 @@ function Dropdown(props) {
             <p className="dropdown--description">{data.description}</p>
           ) : (
             <ul className="dropdown--description">
-              {data.map((equip, i ) => (
-                <li key={i} className="dropdown--equip">{equip}</li>
+              {data.map((equip, i) => (
+                <li key={i} className="dropdown--equip">
+                  {equip}
+                </li>
               ))}
             </ul>
           )}

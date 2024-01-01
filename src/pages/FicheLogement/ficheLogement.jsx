@@ -14,8 +14,9 @@ const FicheLogement = () => {
     setLoading(false);
   }, [id]);
 
-  return (
-    loading ? <div>Loading...</div> :
+  return loading ? (
+    <div>Loading...</div>
+  ) : (
     <div>
       <Carousel data={activeLogement} />
       <BodyFiche data={activeLogement} />

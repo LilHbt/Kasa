@@ -5,8 +5,9 @@ const Banner = () => {
   return (
     <div className="banner">
       <img src={banner} alt="banniere Kasa" className="banner--img" />
-      <p className="banner--text ">Chez vous, partout et ailleurs</p>
-      <div className="banner--opacity"></div>
+      <div className="banner--opacity">
+        <p className="banner--text ">Chez vous, partout et ailleurs</p>
+      </div>
     </div>
   );
 };

@@ -17,6 +17,9 @@
   width: 100%;
   min-height: 470px;
   position: relative;
+  @media (max-width: 480px) {
+    height: 255px;
+  }
   &--img {
     position: absolute;
     width: 100%;
@@ -26,7 +29,7 @@
     object-position: center;
     border-radius: 25px;
   }
-  &--counter{
+  &--counter {
     position: relative;
     top: 185px;
     color: white;

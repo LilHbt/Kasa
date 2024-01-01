@@ -5,22 +5,32 @@ import "./carousel.scss";
 
 function Carousel(props) {
   const { data } = props;
-  const [index, setIndex]= useState(0)
-  const increment= ()=>{
-    let newIndex = index+1
-    if(newIndex===data.pictures.length){
-      setIndex(0)
-    }else{
-      setIndex(newIndex)}
-  }
-  const decrement= ()=>{
-    let newIndex = index-1
-    if(newIndex<0){
-      setIndex(data.pictures.length-1)
-    }else{
-      setIndex(newIndex)}
-  }
-  return (
+  const [index, setIndex] = useState(0);
+  const increment = () => {
+    let newIndex = index + 1;
+    if (newIndex === data.pictures.length) {
+      setIndex(0);
+    } else {
+      setIndex(newIndex);
+    }
+  };
+  const decrement = () => {
+    let newIndex = index - 1;
+    if (newIndex < 0) {
+      setIndex(data.pictures.length - 1);
+    } else {
+      setIndex(newIndex);
+    }
+  };
+  return data.pictures.length === 1 ? (
+    <div className="carousel">
+      <img
+        src={data.pictures[index]}
+        alt="location"
+        className="carousel--img"
+      />
+    </div>
+  ) : (
     <div className="carousel">
       <img
         src={arrowLeft}
@@ -34,8 +44,14 @@ function Carousel(props) {
         className="arrow arrow-right"
         onClick={increment}
       />
-      <img src={data.pictures[index]} alt="location" className="carousel--img" />
-      <p className="carousel--counter">{index+1}/{data.pictures.length}</p>
+      <img
+        src={data.pictures[index]}
+        alt="location"
+        className="carousel--img"
+      />
+      <p className="carousel--counter">
+        {index + 1}/{data.pictures.length}
+      </p>
     </div>
   );
 }
