@@ -4,7 +4,8 @@ import "./dropdown.scss";
 function Dropdown(props) {
   const { title } = props;
   const { data } = props;
-  const [dropdown, isOpen] = useState(false);
+  const [dropdown, setOpened] = useState(false);
+
   if (dropdown === false) {
     return (
       <div className="dropdown">
@@ -13,29 +14,30 @@ function Dropdown(props) {
           <i
             className="fa-solid fa-angle-up dropdown--arrow"
             onClick={() => {
-              isOpen(true);
+              setOpened(true);
             }}
           ></i>
         </div>
       </div>
-    );
+    ); 
   } else {
     return (
       <div className="dropdown">
         <div className="dropdown--head">
           <div className="dropdown--title">{title}</div>
           <i
-            className="fa-solid fa-angle-down dropdown--arrow"
+            className="fa-solid fa-angle-up dropdown--arrow"
             onClick={() => {
-              isOpen(false);
+              setOpened(false);
             }}
+            style={{transform:'rotate(180deg)'}}
           ></i>
         </div>
-        <div>
+        <div >
           {data.description ? (
             <p className="dropdown--description">{data.description}</p>
           ) : (
-            <ul className="dropdown--description">
+            <ul className="dropdown--description" > 
               {data.map((equip, i) => (
                 <li key={i} className="dropdown--equip">
                   {equip}
