@@ -1,6 +1,7 @@
 {
   "name": "kasa",
   "version": "0.1.0",
+  "homepage": "https://LilHbt.github.io/Kasa",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
