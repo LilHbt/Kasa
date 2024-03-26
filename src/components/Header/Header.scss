@@ -1,0 +1,14 @@
+.header {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &--logo {
+    width: 220px;
+    height: 70px;
+    @media (max-width: 480px) {
+      width: 135px;
+      height: 45px;
+    }
+  }
+}
